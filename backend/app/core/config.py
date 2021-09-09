@@ -1,0 +1,22 @@
+import os
+
+RANDOM_STRING_CHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+# JWT's configuration
+SECRET_KEY = '3e4723e2df2d44ec344648d12e513fc87448e00266f7379187a90eb52600f641'
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+# DB connection number configuration
+MAX_CONNECTIONS_COUNT = 100
+MIN_CONNECTIONS_COUNT = 1
+
+# DB Constants
+DATABASE_NAME = "BMC"
+USER_COLLECTIONS = "user"
+
+# Detecting ENVIROMENT Mode
+if os.getenv('ENVIROMENT') == "DEVELOPMENT":
+    MONGODB_URL = "mongodb://localhost:27017"
+else:
+    MONGODB_URL = "mongodb://localhost:27017"
